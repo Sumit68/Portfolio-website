@@ -334,7 +334,7 @@ document.querySelectorAll('.floating-card').forEach(card => {
 });
 
 // Add counter animation for stats
-function animateCounter(element, target, duration = 200) {
+function animateCounter(element, target, duration = 100) {
     let start = 0;
     const increment = target / (duration / 16);
     
