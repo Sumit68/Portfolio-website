@@ -93,3 +93,24 @@ const statsObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.about-stats').forEach(stats => {
     statsObserver.observe(stats);
 });
+
+// Reset experience card filtering when scrolling away from experience section
+const experienceSection = document.querySelector('#experience');
+if (experienceSection) {
+    const experienceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                // Reset all experience cards when scrolling away from experience section
+                const allCards = document.querySelectorAll('.experience-card');
+                allCards.forEach(card => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.boxShadow = '';
+                    card.style.transform = '';
+                });
+            }
+        });
+    }, { threshold: 0.1 }); // Reset when less than 10% of section is visible
+    
+    experienceObserver.observe(experienceSection);
+}
