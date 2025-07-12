@@ -51,14 +51,6 @@ document.querySelectorAll('.floating-card').forEach(card => {
                     }
                 });
 
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    allCards.forEach(card => {
-                        card.style.opacity = '';
-                        card.style.boxShadow = '';
-                        card.style.transform = '';
-                    });
-                }, 3000);
             } else {
                 console.warn(`[ScrollTo] No matching card found for category "${category}"`);
             }
