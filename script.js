@@ -114,3 +114,23 @@ if (experienceSection) {
     
     experienceObserver.observe(experienceSection);
 }
+
+// Smooth scrolling for navigation links and buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.offsetTop - navbarHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
