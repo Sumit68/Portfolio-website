@@ -801,6 +801,20 @@ section {
     margin-bottom: 16px;
 }
 
+.publication-authors {
+    font-size: 0.95rem;
+    color: var(--neutral-600);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.publication-venue {
+    font-size: 0.9rem;
+    color: var(--primary-600);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
 .publication-description {
     color: var(--neutral-600);
     line-height: 1.6;
